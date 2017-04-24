@@ -6,7 +6,7 @@
         "promise"
     ],
     "rules": {
-        "semi":"warn",
+        "semi":"off",
         "quotes": [
             "error",
             "single"
