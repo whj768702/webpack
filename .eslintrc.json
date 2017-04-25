@@ -6,6 +6,7 @@
         "promise"
     ],
     "rules": {
+        "indent": ["error", 4],
         "semi":"off",
         "quotes": [
             "error",
