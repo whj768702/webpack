@@ -1,6 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
-let uglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
+let UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 
 module.exports = {
     entry: './main.js',
@@ -21,7 +21,7 @@ module.exports = {
         ]
     },
     plugins: [
-        new uglifyJsPlugin({
+        new UglifyJsPlugin({
             compress: {
                 warnings: false
             }
