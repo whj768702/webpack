@@ -20,4 +20,4 @@ module.exports = {
 1. npm install
 2. webpack
 
-![raw-loader](.\raw-loader.png)
+![raw-loader](./raw-loader.png)
