@@ -3,7 +3,7 @@
     [
       "@babel/preset-env",
       {
-        "modules": "auto",
+        "modules": "systemjs",
         "targets": {
           "chrome": "100"
           // "browsers": [

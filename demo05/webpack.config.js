@@ -1,31 +1,27 @@
 const path = require('path');
 const webpack = require('webpack');
-let UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
-    entry: './main.js',
-    output: {
-        path: path.resolve(__dirname, './'),
-        filename: 'bundle.js'
-    },
-    module: {
-        rules: [
-            {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader',
-                    options: { presets: ['es2015'] }
-                }
-            }
-        ]
-    },
-    plugins: [
-        new UglifyJsPlugin({
-            compress: {
-                warnings: false
-            }
-        })
-    ]
-
-}
+  entry: './main.js',
+  output: {
+    path: path.resolve(__dirname, './'),
+    filename: 'bundle.js',
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+        },
+      },
+    ],
+  },
+  optimization: {
+    minimize: true,
+    minimizer: [new TerserPlugin()],
+  },
+  plugins: [],
+};
